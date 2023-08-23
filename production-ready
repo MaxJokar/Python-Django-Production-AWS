@@ -1,0 +1,3 @@
+Steps:
+1.Environment var: python-dotenv
+2.Allowed Host, DB creds, Debug should come from env -> jenkins secret manager
