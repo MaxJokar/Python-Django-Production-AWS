@@ -1,4 +1,7 @@
+# in Terraform official Documentation (aw_instance):
+
 # to create a  ec2 : in AWS , 
+#  what is  data , resource :
 # to fetch something from  aws we need data 
 # when we want to create  we use  resource 
 # in instance , name server 
