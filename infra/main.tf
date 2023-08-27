@@ -1,13 +1,13 @@
-# take a scriptf from local machine and puts it in AWS s3 bucket
+#1. this block  takes a scriptf from local machine and puts it in AWS s3 bucket
 
 terraform {
   backend "s3" {
     # Replace this with your bucket name!
-    bucket = "django-api-prod-ready5"
+    bucket = "django-api-prod-ready6"
     key    = "app.tfstate"
     region = "us-west-2"
-    # Replace this with your DynamoDB table name!
-    dynamodb_table = "django-api-prod-ready-lock1"
+    # Replace this with your DynamoDB table name!helps to maintain the lock 
+    dynamodb_table = "django-api-prod-ready-lock6"
     encrypt        = true
 
   }
@@ -22,29 +22,33 @@ terraform {
 
 }
 
+# execute  the  following command line :
+#2.$terrafom fmt, init
 
 
+# 3. create following block:
 provider "aws" {
   region = "us-west-2"
 }
 
+#  Local server:
+#  will be used by all my resources
+# these data must be wrapped by resource in bastion.tf
 locals {
-  prefix = "${var.prefix}-${terraform.workpace}"
+  prefix = "${var.prefix}-${terraform.workspace}"
   common_tags = {
-    Environment = terraform.workpace
-    Project     = var.Project
+    Environment = terraform.workspace
+    Project     = var.project
     Owner       = var.contact
-    ManageBy    = "MaxJokar"
+    ManagedBy   = "MaxJokar"
   }
 
 }
 
 
-data "aws_region" "current" {
-
-}
+data "aws_region" "current" {}
 
 
-
+# ==> vaiables.tf 4.
 
 
