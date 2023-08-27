@@ -48,3 +48,6 @@ resource "aws_instance" "bastion" {
 
 # 5.3 To create bastion :
 #  next  $......apply 
+
+# 6. to  delete the server and instance
+#  $ terraform destroy
