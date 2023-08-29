@@ -193,7 +193,7 @@ To initialize terafrom we need acces to aws  , for that we create a user and use
 Explanation after for  bastion.tf  etc
  Name a server in instance  ,it’s a server when were making an instance !
 In traform we have  a  workspace area its just a  place or environment 
-
+==================================================================================>
 FInall terraform configuration step by step:
 Process:
 1.install terraform :helps to create resource(ec2)
