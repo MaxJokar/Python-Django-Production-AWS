@@ -195,7 +195,7 @@ Explanation after for  bastion.tf  etc
 In traform we have  a  workspace area its just a  place or environment 
 
 
-
+ 
 
 
 
