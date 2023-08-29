@@ -22,12 +22,12 @@ Ect2<to Jenkins on the machine where jkis runing= role <= we assing a
 satement
 CREATE ONE INSTANCE : How to sign up for the AWS free tier in 2023
 
-00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000
 make account , 
 ECR:elastic container repo
 IAM , Roles , Create role ,  (aws service , ec2)=> allow ec2  to call aws services on your behalf, next 
 Jenkins does all for us :Deploys certain things, I connect with another ec2 instance , so we need a role that should be assigned to Jenkins
-=================================
+===============================
 To create Instance:
 Search ec2, instances, launch an instance 
 We must make Role , make name , Amazoon full access…
@@ -39,7 +39,7 @@ HOW TO MAKE:
 Type  ec2, create, instance running, lunch instances ,advanced detail =IAM Instance profile (create a role , select trusted entitiy , choose fullaccess), you can type  like : ec2-full-access-role ,nearby click on blue color to choose Role .
 We make a several policy for one   .Role can be used directrly by AWS service :ec2:in our site we need a user  it’s a terraform (is running on ec2)
 
-=======================================================================================================================================================
+================================
 
 DJANGO part
 VIP:we make repo , clone , go to vscode , clone there, choose a folder from vscode then all will be installed inside the folder(this is for a very new project)for a ready we can from inside the folder open the project , with no problem
@@ -56,7 +56,7 @@ In mac : we can see if our app installed or not ,  venv, bin , gunicorn
 (venv) PS C:\mydrive\Projects\Python-Django-Production-AWS> python manage.py runserver
 
 We configure  docker  ,  entrypoint.sh  etc 
-================================================================================================================================================
+======================================
 
 GIT commands:
 Git branch =>shows how many branches you have 
@@ -74,7 +74,7 @@ For pull or merge : in main :
 env) PS C:\mydrive\Projects\Python-Django-Production-AWS> git merge feature/dockerise-django
 (env) PS C:\mydrive\Projects\Python-Django-Production-AWS> git add api/api/settings.py
 (env) PS C:\mydrive\Projects\Python-Django-Production-AWS> pish commit -m "Dockerised Django"
-========================================================================================================================================================
+====================================
 DOCKER : make a docker image from dockerfile !
 1.	When you finished docker  you can use  in terminal this  option :on root where dockerfile is locate write this command:d $ docker build -f (on dockerfile copy PATH ,add here ) \mydrive\Projects\Python-Django-Production-AWS\infra\Dockerfile
 OR
@@ -104,7 +104,7 @@ Deleted non container , once deleted  venv to install all dependencies
 (env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker logs 36d8a9be0f9d
 
 
-==========================================================================================================================================
+======================================
 PART 3    TERRAFORM:
 Create main.tf and code in it then  $terraform fmt and then init 
 Instances –ec2, type s3 it is bucket . $981898181358Bb
@@ -138,7 +138,7 @@ Ac key : AKIA2HAGIWYU3SPTSQVZ
 Sec key: pWEI3WtILUqx36KBkJYE8N7/Z3bAConfUaMB55E5
 MOSHKEL: I did new  bucket and made permission for everyone can use it not just 
 
-=================================================================================================================================
+=================================
 To initialize  terraform we need access to aws for that we made a user  , IAM user , $trform init 
 
 Powershell :
@@ -179,7 +179,7 @@ We go to amazon web this address:
 https://s3.console.aws.amazon.com/s3/buckets?region=eu-central-1
 https://s3.console.aws.amazon.com/s3/bucket/create?region=eu-central-1
 change bucketname as we have in main.tf and all push create bucket
-============================================================================================
+================================
 To formate it  we must:
 (env) PS C:\mydrive\Projects\Python-Django-Production-AWS> cd infra
 (env) PS C:\mydrive\Projects\Python-Django-Production-AWS\infra> terraform fmt
