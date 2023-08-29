@@ -194,6 +194,28 @@ Explanation after for  bastion.tf  etc
  Name a server in instance  ,it’s a server when were making an instance !
 In traform we have  a  workspace area its just a  place or environment 
 
+FInall terraform configuration step by step:
+Process:
+1.install terraform :helps to create resource(ec2)
+2.main.tf , make a block , 
+3. in aws  configure(make bucket  s3) :write the name of buckets as  we used in main.tf for the bucket:stores state of Terraform 
+4.make DynamoDB too,Partitial key, LockID
+5.required block 
+6.  $terraform –version ,  fmt (config and codes  r  ok, if no issue happens) , init (to access aws)
+7. EC2>instances>launch an instance make a   key-pair near the box  like a circle click on for the access to private subnet we need key-pari later 
+8. variables.tf 
+9.$terraform workspace new dev 
+10.terraform list 
+11. bastion.tf     =>to create a  ec2
+12.$terraform fmt ,  validate 
+13.we also need IAM user => $aws configure …us-west-2,json,….
+14.$terraform plan , apply       to  create bastion for  us , yes , 
+To search our key adjust or not  :
+cts\Python-Django-Production-AWS> aws ec2 describe-key-pairs --key-name bastion6-key6 --region us-west-2
+15.apply  its creating bastion.host 
+Go to  EC2 console amazron , youll see a new instance done by code 
+In Instances  , tags part we can see all datas we gave  
+16.terraform destroy
 
  
 
