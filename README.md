@@ -74,7 +74,7 @@ For pull or merge : in main :
 env) PS C:\mydrive\Projects\Python-Django-Production-AWS> git merge feature/dockerise-django
 (env) PS C:\mydrive\Projects\Python-Django-Production-AWS> git add api/api/settings.py
 (env) PS C:\mydrive\Projects\Python-Django-Production-AWS> pish commit -m "Dockerised Django"
-====================================>
+===================DOCKER=================>
 DOCKER : make a docker image from dockerfile !
 1.	When you finished docker  you can use  in terminal this  option :on root where dockerfile is locate write this command:d $ docker build -f (on dockerfile copy PATH ,add here ) \mydrive\Projects\Python-Django-Production-AWS\infra\Dockerfile
 OR
@@ -102,7 +102,19 @@ Deleted non container , once deleted  venv to install all dependencies
 (env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker run -p 8000:8000 -d api
 36d8a9be0f9d589d08426e5ad679c2cd9fcc3c946f7f8b1cd3b4d8a540f02c1f
 (env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker logs 36d8a9be0f9d
-
+==>summary:
+(env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+(env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker run -d -p 8000:8000 api
+69790ea764ea0dc241fae3df3293060e7570088a42df0096575b8159c77fa9eb
+(env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                    NAMES
+69790ea764ea   api       "/gunicorn-entrypoin…"   22 seconds ago   Up 20 seconds   0.0.0.0:8000->8000/tcp   wonderful_tesla
+(env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker images
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+api          latest    a63cc2727606   5 days ago   1.08GB
+(env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker build -f infra/Dockerfile -t api  .         DONE
+If  the port is busy , we must :
 
 ======================================>
 PART 3    TERRAFORM:
