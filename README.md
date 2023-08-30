@@ -115,6 +115,20 @@ REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
 api          latest    a63cc2727606   5 days ago   1.08GB
 (env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker build -f infra/Dockerfile -t api  .         DONE
 If  the port is busy , we must :
+===========SUMMARY================>
+(env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+(env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker run -d -p 8000:8000 api
+69790ea764ea0dc241fae3df3293060e7570088a42df0096575b8159c77fa9eb
+(env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                    NAMES
+69790ea764ea   api       "/gunicorn-entrypoin…"   22 seconds ago   Up 20 seconds   0.0.0.0:8000->8000/tcp   wonderful_tesla
+(env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker images
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+api          latest    a63cc2727606   5 days ago   1.08GB
+(env) PS C:\mydrive\Projects\Python-Django-Production-AWS> docker build -f infra/Dockerfile -t api  .         DONE
+If  the port is busy , we must :
+
 
 ======================================>
 PART 3    TERRAFORM:
